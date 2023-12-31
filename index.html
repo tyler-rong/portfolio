@@ -39,7 +39,7 @@
         <p>Check out more on my Notion page: <a href="https://www.notion.so/sunday-neat/The-Sunday-Neat-4edec0eb4f554f29b9d71db284faa5f4" target="_blank">The Sunday Neat</a></p>
     </section>
 
-    <!-- New Resources section to display the Notion data as a table -->
+    <!-- Resources section to display the Notion data as a table -->
     <section id="resources">
         <h2>Books, Podcasts, Twitter Lists, and More</h2>
         <table>
@@ -55,7 +55,7 @@
                 <th>List</th>
                 <th>Behavior Changed</th>
             </tr>
-            <!-- Table rows will be added here with the data from Notion -->
+            <!-- Table rows will be added here with the data from the CSV file -->
         </table>
     </section>
 
@@ -70,7 +70,27 @@
         <p>&copy; 2023 Your Name</p>
     </footer>
 
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
+    <!-- JavaScript to load and parse CSV data -->
+    <script>
+        fetch('Content podcasts.csv')
+        .then(response => response.text())
+        .then(csvText => {
+            const table = document.querySelector('#resources table');
+            const rows = parseCSV(csvText);
+            rows.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
+            });
+        });
+
+        function parseCSV(text) {
+            return text.split('\n').slice(1).map(row => row.split(','));
+        }
+    </script>
 </body>
 </html>
