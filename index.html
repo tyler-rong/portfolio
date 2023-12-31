@@ -1,96 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for character set and responsive behavior -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the webpage -->
     <title>Your Name - Portfolio</title>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling for responsiveness and aesthetics */
+    </style>
 </head>
 <body>
-    <!-- Header section with your name and a welcome message -->
     <header>
         <h1>Your Name</h1>
         <p>Welcome to my personal website!</p>
     </header>
 
-    <!-- Navigation menu -->
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#resources">Resources</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- About Me section -->
     <section id="about">
         <h2>About Me</h2>
         <p>Here's a little about myself...</p>
     </section>
 
-    <!-- Projects section with a description and link to Notion page -->
     <section id="projects">
         <h2>Projects</h2>
-        <p>I listen to Business Podcasts to <strong>lose less money</strong>, you should too. On this site, I save you <strong>time</strong> by acting as your personal podcast concierge, directing you to top-tier audio experiences.</p>
-        <p>Check out more on my Notion page: <a href="https://www.notion.so/sunday-neat/The-Sunday-Neat-4edec0eb4f554f29b9d71db284faa5f4" target="_blank">The Sunday Neat</a></p>
+        <!-- Project 1 -->
+        <div>
+            <h3>Podcast of the Week</h3>
+            <p>Description...</p>
+            <!-- Link or more details -->
+        </div>
+        <!-- Other projects follow... -->
     </section>
 
-    <!-- Resources section to display the Notion data as a table -->
-    <section id="resources">
-        <h2>Books, Podcasts, Twitter Lists, and More</h2>
-        <table>
-            <tr>
-                <th>Host</th>
-                <th>Title</th>
-                <th>Guest(s)</th>
-                <th>Source</th>
-                <th>Type</th>
-                <th>Summary & Link</th>
-                <th>Date Added</th>
-                <th>Plays</th>
-                <th>List</th>
-                <th>Behavior Changed</th>
-            </tr>
-            <!-- Table rows will be added here with the data from the CSV file -->
-        </table>
-    </section>
-
-    <!-- Contact section with email link -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Reach out to me at: <a href="mailto:your@email.com">your@email.com</a></p>
     </section>
 
-    <!-- Footer with copyright information -->
     <footer>
         <p>&copy; 2023 Your Name</p>
+        <!-- Social media or professional links -->
     </footer>
 
-    <!-- JavaScript to load and parse CSV data -->
     <script>
-        fetch('Content podcasts.csv')
-        .then(response => response.text())
-        .then(csvText => {
-            const table = document.querySelector('#resources table');
-            const rows = parseCSV(csvText);
-            rows.forEach(row => {
-                const tr = document.createElement('tr');
-                row.forEach(cell => {
-                    const td = document.createElement('td');
-                    td.textContent = cell;
-                    tr.appendChild(td);
-                });
-                table.appendChild(tr);
-            });
-        });
-
-        function parseCSV(text) {
-            return text.split('\n').slice(1).map(row => row.split(','));
-        }
+        // Your existing script for loading CSV data
     </script>
 </body>
 </html>
