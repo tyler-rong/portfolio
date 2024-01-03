@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Rongione - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lora:wght@700&display=swap" rel="stylesheet"> <!-- Gothic-style fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lora:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Lora', serif; /* Gothic-style font */
-            color: #d3c4a1; /* Earthy, parchment-like color */
-            background-color: #0a0806; /* Dark Warcraft III UI theme */
-            background-image: url('warcraft_background.jpg'); /* Warcraft-themed background */
+            font-family: 'Lora', serif;
+            color: #d3c4a1;
+            background-color: #0a0806;
+            background-image: url('warcraft_background.jpg');
             background-size: cover;
             line-height: 1.6;
             padding: 20px;
@@ -18,35 +18,35 @@
         }
 
         header, section, footer {
-            background-color: #1a1714; /* Dark background */
-            border: 3px solid #6b4f31; /* Ornate border style */
+            background-color: #1a1714;
+            border: 3px solid #6b4f31;
             padding: 15px;
             margin-bottom: 30px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
-            border-radius: 10px; /* Rounded corners */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
         }
 
         h1, h2, h3 {
-            font-family: 'Cinzel', serif; /* Decorative font for headings */
-            color: #c9b88a; /* Gold-like color */
-            text-shadow: 2px 2px 4px black; /* Text shadow for depth */
+            font-family: 'Cinzel', serif;
+            color: #c9b88a;
+            text-shadow: 2px 2px 4px black;
         }
 
         a {
-            color: #4a9c8f; /* Mystical green for links */
-            transition: color 0.3s; /* Transition for hover effect */
+            color: #4a9c8f;
+            transition: color 0.3s;
         }
 
         a:hover {
-            color: #d3c4a1; /* Parchment-like color on hover */
+            color: #d3c4a1;
             text-decoration: underline;
         }
 
         .project, .twitter-list {
-            background-color: rgba(26, 23, 20, 0.9); /* Slightly opaque */
+            background-color: rgba(26, 23, 20, 0.9);
             padding: 10px;
-            border: 2px solid #6b4f31; /* Consistent borders */
-            border-radius: 8px; /* Matching border-radius */
+            border: 2px solid #6b4f31;
+            border-radius: 8px;
         }
 
         ul {
@@ -58,62 +58,85 @@
         }
 
         p {
-            text-align: justify; /* Justified text */
+            text-align: justify;
         }
 
+        /* New styles for dropdown */
+        .dropdown-header {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-header:hover {
+            background-color: #3a3633;
+        }
+
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 15px;
+        }
+
+        /* Style for animations */
+        .animate {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <!-- Simplified Header -->
-    <header>
+    <header class="dropdown-header" onclick="toggleDropdown('header-content')">
         <h1>Tyler Rongione</h1>
-        <p>Podcast Obsessive & 𝕏 Reply Guy of the Year</p>
     </header>
+    <div id="header-content" class="dropdown-content animate">
+        <p>Podcast Obsessive & 𝕏 Reply Guy of the Year</p>
+    </div>
 
     <!-- Concise About Section -->
-    <section id="about">
+    <section class="dropdown-header" onclick="toggleDropdown('about-content')">
         <h2>About Me</h2>
-        <p>My first love was Real-Time Strategy games like Age of Empires II and Warcraft III, which ignited my passion for visual analysis, deeply influenced by Edward Tufte. This interest naturally extended into finance, guided by the insights of Nassim Taleb and Benoit Mandelbrot, ultimately leading me to my career in data science.</p>
     </section>
+    <div id="about-content" class="dropdown-content animate">
+        <p>My first love was Real-Time Strategy games like Age of Empires II and Warcraft III...</p>
+    </div>
 
     <!-- Refined Projects Section -->
-    <section id="projects">
+    <section class="dropdown-header" onclick="toggleDropdown('projects-content')">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>Podcast of the Week</h3>
-            <p>Highlighting the best in audio storytelling.</p>
-        </div>
-        <div class="project">
-            <h3>Podcast Search</h3>
-            <p>Discover podcasts that resonate with your interests.</p>
-        </div>
-        <div class="project">
-            <h3>Podcast Tier List</h3>
-            <p>Rank the podcasts you listen to.</p>
-            <a href="https://tiermaker.com/create/business-podcast-tier-list-16230340" target="_blank">Create Your Own Tier List</a>
-        </div>
-        <div class="project">
-            <h3>Twitter Lists</h3>
-            <p>Stay updated with curated Twitter feeds:</p>
-            <ul class="twitter-list">
-                <li><a href="https://twitter.com/i/lists/1493369580571578377" target="_blank">Volatility 📉📈</a></li>
-                <li><a href="https://twitter.com/i/lists/1493641106155790336" target="_blank">Finance 💸</a></li>
-                <li><a href="https://twitter.com/i/lists/1493641061390037002" target="_blank">Philosophy 🧠</a></li>
-                <li><a href="https://twitter.com/i/lists/1567229666271920128" target="_blank">Gaming 👾</a></li>
-                <li><a href="https://twitter.com/i/lists/1567662440208285696" target="_blank">Funance 🙂</a></li>
-            </ul>
-        </div>
     </section>
+    <div id="projects-content" class="dropdown-content animate">
+        <!-- Project details here -->
+    </div>
 
     <!-- Minimal Contact Section -->
-    <section id="contact">
+    <section class="dropdown-header" onclick="toggleDropdown('contact-content')">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:tyler.rongione@gmail.com">tyler.rongione@gmail.com</a></p>
     </section>
+    <div id="contact-content" class="dropdown-content animate">
+        <p>Email: <a href="mailto:tyler.rongione@gmail.com">tyler.rongione@gmail.com</a></p>
+    </div>
 
     <!-- Minimalist Footer -->
     <footer>
         <p>&copy; 2023 Tyler Rongione</p>
     </footer>
+
+    <!-- JavaScript for Dropdown -->
+    <script>
+        function toggleDropdown(id) {
+            var content = document.getElementById(id);
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
 </body>
 </html>
