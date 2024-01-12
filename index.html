@@ -78,24 +78,31 @@
         /* Styles for the timeline */
         .timeline {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: center;
             align-items: center;
+            overflow-x: auto;
+            white-space: nowrap;
             margin: 20px 0;
+            padding: 0 10px;
         }
 
         .timeline-item {
+            display: inline-block;
             background-color: #333;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin: 10px 0;
+            margin: 0 10px;
             position: relative;
         }
 
         .timeline-item::after {
             content: '→';
             position: absolute;
-            right: -20px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 24px;
             color: white;
         }
@@ -110,15 +117,14 @@
     <header>
         <h1>Tyler Rongione</h1>
         <div class="timeline">
-            <div class="timeline-item">🎮 RTS Games - My first love was Real-Time Strategy games.</div>
-            <div class="timeline-item">🔗 Supply Chain Management - Explored supply chain intricacies.</div>
-            <div class="timeline-item">💻 Information Systems - Ventured into information systems.</div>
-            <div class="timeline-item">🛡️ Defense Tech - Focused on defense technology.</div>
-            <div class="timeline-item">💹 Finance - Delved into the complexities of finance.</div>
-            <div class="timeline-item">🎙️ Podcasts - Currently passionate about podcasts.</div>
+            <div class="timeline-item">🎮 RTS Games</div>
+            <div class="timeline-item">🔗 Supply Chain Management</div>
+            <div class="timeline-item">💻 Information Systems</div>
+            <div class="timeline-item">🛡️ Defense Tech</div>
+            <div class="timeline-item">💹 Finance</div>
+            <div class="timeline-item">🎙️ Podcasts</div>
         </div>
     </header>
-
     <!-- Projects Section -->
     <section>
         <h2>Projects</h2>
