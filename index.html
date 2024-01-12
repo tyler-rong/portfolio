@@ -75,76 +75,98 @@
             height: auto;
         }
 
-        /* ... [Additional custom styles if needed] ... */
+        /* Styles for the timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .timeline-item::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .timeline-item:last-child::after {
+            content: none;
+        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <h1>Tyler Rongione</h1>
+        <div class="timeline">
+            <div class="timeline-item">🎮 RTS Games - My first love was Real-Time Strategy games.</div>
+            <div class="timeline-item">🔗 Supply Chain Management - Explored supply chain intricacies.</div>
+            <div class="timeline-item">💻 Information Systems - Ventured into information systems.</div>
+            <div class="timeline-item">🛡️ Defense Tech - Focused on defense technology.</div>
+            <div class="timeline-item">💹 Finance - Delved into the complexities of finance.</div>
+            <div class="timeline-item">🎙️ Podcasts - Currently passionate about podcasts.</div>
+        </div>
     </header>
-    <div id="header-content" class="dropdown-content animate">
-        <p>Podcast Obsessive & 𝕏 Reply Guy of the Year</p>
-    </div>
-
-    <!-- About Me Section -->
-    <section>
-        <h2>About Me</h2>
-    </section>
-    <div id="about-content" class="dropdown-content animate">
-        <p>My first love was Real-Time Strategy games like Age of Empires II and Warcraft III...which blossomed into a love for all things visual and data related</p>
-    </div>
 
     <!-- Projects Section -->
     <section>
         <h2>Projects</h2>
+        <div id="projects-content" class="dropdown-content animate projects-container">
+            <!-- Project 1 -->
+            <div class="project">
+                <h3>1. Podcast of the Week</h3>
+                <p>Highlighting the best in audio storytelling.</p>
+                <li><a href="https://www.notion.so/sunday-neat/Podcast-of-the-Week-4edec0eb4f554f29b9d71db284faa5f4" target="_blank">Pod of the Week</a></li>
+            </div>
+            <!-- Project 2 -->
+            <div class="project">
+                <h3>2. Podcast Search</h3>
+                <img src="pod-search.jpg" alt="Podcast Search" style="max-width:100%; height:auto;">
+                <p>Discover podcasts that resonate with your interests.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="project">
+                <h3>3. Podcast Tier List</h3>
+                <p>Rank the podcasts you listen to.</p>
+                <a href="https://tiermaker.com/create/business-podcast-tier-list-16230340" target="_blank">Create Your Own Tier List</a>
+            </div>
+            <!-- Project 4 -->
+            <div class="project">
+                <h3>4. Twitter Lists</h3>
+                <p>Stay updated with curated Twitter feeds:</p>
+                <ul>
+                    <li><a href="https://twitter.com/i/lists/1493369580571578377" target="_blank">Volatility 📉📈</a></li>
+                    <li><a href="https://twitter.com/i/lists/1493641106155790336" target="_blank">Finance 💸</a></li>
+                    <li><a href="https://twitter.com/i/lists/1493641061390037002" target="_blank">Philosophy 🧠</a></li>
+                    <li><a href="https://twitter.com/i/lists/1567229666271920128" target="_blank">Gaming 👾</a></li>
+                    <li><a href="https://twitter.com/i/lists/1567662440208285696" target="_blank">Funance 🙂</a></li>
+                </ul>
+            </div>
+        </div>
     </section>
-    <div id="projects-content" class="dropdown-content animate projects-container">
-        <!-- Project 1 -->
-        <div class="project">
-            <h3>1. Podcast of the Week</h3>
-            <p>Highlighting the best in audio storytelling.</p>
-            <li><a href="https://www.notion.so/sunday-neat/Podcast-of-the-Week-4edec0eb4f554f29b9d71db284faa5f4" target="_blank">Pod of the Week</a></li>
-        </div>
-        <!-- Project 2 -->
-        <div class="project">
-            <h3>2. Podcast Search</h3>
-            <img src="pod-search.jpg" alt="Podcast Search" style="max-width:100%; height:auto;">
-            <p>Discover podcasts that resonate with your interests.</p>
-        </div>
-        <!-- Project 3 -->
-        <div class="project">
-            <h3>3. Podcast Tier List</h3>
-            <p>Rank the podcasts you listen to.</p>
-            <a href="https://tiermaker.com/create/business-podcast-tier-list-16230340" target="_blank">Create Your Own Tier List</a>
-        </div>
-        <!-- Project 4 -->
-        <div class="project">
-            <h3>4. Twitter Lists</h3>
-            <p>Stay updated with curated Twitter feeds:</p>
-            <ul>
-                <li><a href="https://twitter.com/i/lists/1493369580571578377" target="_blank">Volatility 📉📈</a></li>
-                <li><a href="https://twitter.com/i/lists/1493641106155790336" target="_blank">Finance 💸</a></li>
-                <li><a href="https://twitter.com/i/lists/1493641061390037002" target="_blank">Philosophy 🧠</a></li>
-                <li><a href="https://twitter.com/i/lists/1567229666271920128" target="_blank">Gaming 👾</a></li>
-                <li><a href="https://twitter.com/i/lists/1567662440208285696" target="_blank">Funance 🙂</a></li>
-            </ul>
-        </div>
-    </div>
 
     <!-- Contact Section -->
     <section>
         <h2>Contact</h2>
+        <div id="contact-content" class="dropdown-content animate">
+            <p>Email: <a href="mailto:tyler.rongione@gmail.com">tyler.rongione@gmail.com</a></p>
+        </div>
     </section>
-    <div id="contact-content" class="dropdown-content animate">
-        <p>Email: <a href="mailto:tyler.rongione@gmail.com">tyler.rongione@gmail.com</a></p>
-    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2023 Tyler Rongione</p>
     </footer>
-
 </body>
 </html>
-
